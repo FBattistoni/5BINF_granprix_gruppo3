@@ -49,11 +49,9 @@ public class Giocatore {
         System.out.println("Immetti la tua password: ");
         password = sc.nextLine();
         setPassword(password);
-        System.out.println("Immetti la chiave: ");
-        chiave = sc.nextLine();
-        setChiave(chiave);
     }
 
+    // Metodo per criptare vigenere
     public String criptaVigenere() {
         StringBuilder passwordCifrata = new StringBuilder();
 
@@ -61,7 +59,7 @@ public class Giocatore {
             char carattere = password.charAt(i);
             char chiaveCorrispondente = chiave.charAt(i % chiave.length());
 
-            // Esegue la cifratura di Vigenère
+            // Esegue la cifratura di vigenere
             char carattereCifrato = (char) ((carattere + chiaveCorrispondente) % 128);
 
             passwordCifrata.append(carattereCifrato);
@@ -71,12 +69,18 @@ public class Giocatore {
         return this.passwordCifrata;
     }
 
+    // Metodo per salvare le credenziali
     public void salvaCredenziali() {
         Scrittore scrittore = new Scrittore("credenziali.csv", nomeGiocatore, email, passwordCifrata);
         Thread threadScrittore = new Thread(scrittore);
         threadScrittore.start();
     }
 
+    // Metodo per immettere i dati delle Auto, Piloti, ecc...
+    public void salvaAuto() {
+    }
+
+    // Getters e setters
     public String getNomeGiocatore() {
         return nomeGiocatore;
     }

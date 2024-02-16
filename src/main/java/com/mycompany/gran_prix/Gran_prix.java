@@ -30,6 +30,8 @@ public class Gran_prix {
             if (scelta == 1) {
                 successo = true;
                 giocatore1.registrazione();
+                giocatore1.criptaVigenere();
+                giocatore1.salvaCredenziali();
             } else if (scelta == 2) {
                 successo = true;
                 giocatore1.accesso();
@@ -37,11 +39,6 @@ public class Gran_prix {
                 System.out.println("Opzione non corretta. ");
             }
         }
-
-        //metodi per criptare e salvare le credenziali messe dalla registrazione
-        giocatore1.criptaVigenere();
-        giocatore1.salvaCredenziali();
-
     }
 
 }
