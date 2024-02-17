@@ -10,15 +10,9 @@ package com.mycompany.gran_prix;
 public class Pilota extends Thread {
 
     String nomePilota;
-    String modelloAuto;
 
-    public Pilota(String nomePilota, String modelloAuto) {
+    public Pilota(String nomePilota) {
         this.nomePilota = nomePilota;
-        this.modelloAuto = modelloAuto;
     }
 
-    @Override
-    public void run() {
-
-    }
 }

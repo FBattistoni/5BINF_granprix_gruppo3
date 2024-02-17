@@ -35,7 +35,7 @@ public class Circuito {
             String nomePilota = scan.nextLine();
             System.out.println("Inserisci modello dell'auto:");
             String modelloAuto = scan.nextLine();
-            piloti[i] = new Pilota(nomePilota, modelloAuto);
+            piloti[i] = new Pilota(nomePilota);
         }
     }
 }

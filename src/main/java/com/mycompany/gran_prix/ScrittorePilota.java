@@ -13,14 +13,21 @@ import java.util.logging.Logger;
 /*
  * @author cartaginesi, battistoni, marchesini
  */
-public class ScrittoreAuto implements Runnable {
 
-    String nomeFile2;
-    String modelloAuto;
 
-    public ScrittoreAuto(String nomeFile, String modelloAuto) {
-        this.nomeFile2 = nomeFile2;
-        this.modelloAuto = modelloAuto;
+/* Sto cercando di capire perchè mi da errore "Nullpointerexception" quando
+ * avvio il programma runna salvaCredenziali, salvaAuto però dopo si ferma al
+ * al salvaPilota.
+ */
+
+public class ScrittorePilota implements Runnable {
+
+    String nomeFile3;
+    String nomePilota;
+
+    public ScrittorePilota(String nomeFile3, String nomePilota) {
+        this.nomeFile3 = nomeFile3;
+        this.nomePilota = nomePilota;
     }
 
     @Override
@@ -30,13 +37,13 @@ public class ScrittoreAuto implements Runnable {
 
     public void scrivi() {
 
-        try (BufferedWriter br = new BufferedWriter(new FileWriter(nomeFile2))) {
-            br.write("<" + modelloAuto + ">");
+        try (BufferedWriter br = new BufferedWriter(new FileWriter(nomeFile3))) {
+            br.write("<" + nomePilota + ">");
             br.write("\n\r");
             br.flush();
 
         } catch (IOException ex) {
-            Logger.getLogger(ScrittoreAuto.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ScrittorePilota.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }

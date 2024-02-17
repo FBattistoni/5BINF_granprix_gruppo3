@@ -27,18 +27,23 @@ public class Gran_prix {
 
             scelta = sc.nextShort();
 
-            if (scelta == 1) {
-                successo = true;
-                giocatore1.registrazione();
-                giocatore1.criptaVigenere();
-                giocatore1.salvaCredenziali();
-            } else if (scelta == 2) {
-                successo = true;
-                giocatore1.accesso();
-            } else {
-                System.out.println("Opzione non corretta. ");
+            switch (scelta) {
+                case 1 -> {
+                    successo = true;
+                    giocatore1.registrazione();
+                    giocatore1.criptaVigenere();
+                    giocatore1.salvaCredenziali();
+                }
+                case 2 -> {
+                    successo = true;
+                    giocatore1.accesso();
+                }
+                default ->
+                    System.out.println("Opzione non corretta. ");
             }
         }
+        giocatore1.salvaAuto();
+        giocatore1.salvaPilota();
     }
 
 }
