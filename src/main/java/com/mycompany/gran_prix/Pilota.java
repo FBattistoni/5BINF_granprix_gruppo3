@@ -7,7 +7,7 @@ package com.mycompany.gran_prix;
 /**
  * @author cartaginesi, battistoni, marchesini
  */
-public class Pilota extends Thread {
+public class Pilota {
 
     String nomePilota;
 

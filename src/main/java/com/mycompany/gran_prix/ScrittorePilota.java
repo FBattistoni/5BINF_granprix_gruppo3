@@ -13,13 +13,6 @@ import java.util.logging.Logger;
 /*
  * @author cartaginesi, battistoni, marchesini
  */
-
-
-/* Sto cercando di capire perchè mi da errore "Nullpointerexception" quando
- * avvio il programma runna salvaCredenziali, salvaAuto però dopo si ferma al
- * al salvaPilota.
- */
-
 public class ScrittorePilota implements Runnable {
 
     String nomeFile3;

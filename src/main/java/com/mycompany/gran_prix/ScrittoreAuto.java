@@ -18,7 +18,7 @@ public class ScrittoreAuto implements Runnable {
     String nomeFile2;
     String modelloAuto;
 
-    public ScrittoreAuto(String nomeFile, String modelloAuto) {
+    public ScrittoreAuto(String nomeFile2, String modelloAuto) {
         this.nomeFile2 = nomeFile2;
         this.modelloAuto = modelloAuto;
     }
