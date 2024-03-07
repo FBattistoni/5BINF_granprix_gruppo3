@@ -77,21 +77,15 @@ public class Giocatore {
         threadScrittore.start();
     }
 
-    // Metodo per salvare le auto che il giocatore sceglie
-    public void salvaAuto() {
-        System.out.println("Immetti il modella della tua auto: ");
-        modelloAuto = sc.nextLine();
-        ScrittoreAuto scrittoreAuto = new ScrittoreAuto("auto.csv", modelloAuto);
-        Thread threadScrittoreAuto = new Thread(scrittoreAuto);
-        threadScrittoreAuto.start();
-    }
-
-    public void salvaPilota() {
-        System.out.println("Immetti il nome del pilota: ");
-        nomePilota = sc.nextLine();
-        ScrittorePilota scrittorePilota = new ScrittorePilota("pilota.csv", nomePilota);
-        Thread threadScrittorePilota = new Thread(scrittorePilota);
-        threadScrittorePilota.start();
+    public void gestioneCircuito() {
+        System.out.println("Immetti il nome del circuito: ");
+        String nomeCircuito = sc.nextLine();
+        System.out.println("Immetti il numero dei giri: ");
+        int numeroGiri = sc.nextInt();
+        System.out.println("Immetti la lunghezza del circuito: ");
+        int lunghezzaCircuito = sc.nextInt();
+        Circuito circuito = new Circuito(nomeCircuito, numeroGiri, lunghezzaCircuito);
+        circuito.inserisciDatiPiloti();
     }
 
     // Getters e setters

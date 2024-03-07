@@ -17,10 +17,12 @@ public class ScrittorePilota implements Runnable {
 
     String nomeFile3;
     String nomePilota;
+    String modelloAuto;
 
-    public ScrittorePilota(String nomeFile3, String nomePilota) {
+    public ScrittorePilota(String nomeFile3, String nomePilota, String modelloAuto) {
         this.nomeFile3 = nomeFile3;
         this.nomePilota = nomePilota;
+        this.modelloAuto = modelloAuto;
     }
 
     @Override
@@ -32,6 +34,8 @@ public class ScrittorePilota implements Runnable {
 
         try (BufferedWriter br = new BufferedWriter(new FileWriter(nomeFile3))) {
             br.write("<" + nomePilota + ">");
+            br.write("\n\r");
+            br.write("<" + modelloAuto + ">");
             br.write("\n\r");
             br.flush();
 

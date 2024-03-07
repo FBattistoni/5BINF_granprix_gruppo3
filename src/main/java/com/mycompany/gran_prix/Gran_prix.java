@@ -33,6 +33,7 @@ public class Gran_prix {
                     giocatore1.registrazione();
                     giocatore1.criptaVigenere();
                     giocatore1.salvaCredenziali();
+                    giocatore1.gestioneCircuito();
                 }
                 case 2 -> {
                     successo = true;
@@ -42,8 +43,6 @@ public class Gran_prix {
                     System.out.println("Opzione non corretta. ");
             }
         }
-        giocatore1.salvaAuto();
-        giocatore1.salvaPilota();
     }
 
 }
