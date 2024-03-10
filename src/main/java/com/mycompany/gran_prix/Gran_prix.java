@@ -11,8 +11,10 @@ public class Gran_prix {
 
     public static void main(String[] args) {
 
+        // Scanner per l'input da tastiera
         Scanner sc = new Scanner(System.in);
 
+        // Crea un nuovo giocatore
         Giocatore giocatore1 = new Giocatore();
 
         /*scelta tra login e registrazione, il while continue finchè non si
@@ -28,6 +30,7 @@ public class Gran_prix {
 
             switch (scelta) {
                 case 1 -> {
+                    // Registrazione
                     successo = true;
                     giocatore1.registrazione();
                     giocatore1.criptaVigenere();
@@ -39,6 +42,7 @@ public class Gran_prix {
                     }
                 }
                 case 2 -> {
+                    // Accesso
                     successo = true;
                     giocatore1.accesso();
                     try {
