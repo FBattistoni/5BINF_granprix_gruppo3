@@ -1,15 +1,12 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.mycompany.gran_prix;
 
-import java.io.*;
-import java.util.*;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Random;
 
-/**
- * @author cartaginesi, battistoni, marchesini
- */
+import java.util.Scanner;
+
 public class Pilota extends Thread {
 
     Scanner sc = new Scanner(System.in);
@@ -19,6 +16,7 @@ public class Pilota extends Thread {
     int ngiri;
     int lunghezzaCircuito;
     boolean running = true;
+    int giriCompletati = 0;
 
     public Pilota(String nomePilota, Auto auto, String nomeCircuito, int ngiri, int lunghezzaCircuito) {
         this.nomePilota = nomePilota;
@@ -31,28 +29,24 @@ public class Pilota extends Thread {
     @Override
     public void run() {
         Random r = new Random();
-        int giriCompletati = 0;
-        int posizione = 0;
         while (giriCompletati < ngiri && running) {
             int spostamentoPercorso = 0;
             if (auto.getTipo() == 1) {
                 spostamentoPercorso = r.nextInt(100);
-                posizione += spostamentoPercorso;
+                int posizione = spostamentoPercorso;
                 pitStop(posizione);
                 incidente(r);
-                verificaGiro(posizione, lunghezzaCircuito, giriCompletati);
-
+                giriCompletati = verificaGiro(posizione, lunghezzaCircuito, giriCompletati);
             } else {
                 if (auto.getTipo() == 2) {
                     spostamentoPercorso = r.nextInt(200);
-                    posizione += spostamentoPercorso;
+                    int posizione = spostamentoPercorso;
                     pitStop(posizione);
                     incidente(r);
-                    verificaGiro(posizione, lunghezzaCircuito, giriCompletati);
+                    giriCompletati = verificaGiro(posizione, lunghezzaCircuito, giriCompletati);
                 }
             }
         }
-
     }
 
     public void pitStop(int posizione) {
@@ -105,5 +99,9 @@ public class Pilota extends Thread {
             giriCompletati++;
         }
         return giriCompletati;
+    }
+
+    public int getGiriCompletati() {
+        return giriCompletati; // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }

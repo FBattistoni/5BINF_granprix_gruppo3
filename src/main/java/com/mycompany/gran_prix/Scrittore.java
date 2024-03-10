@@ -1,18 +1,12 @@
 package com.mycompany.gran_prix;
 
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.logging.Level;
+
 import java.util.logging.Logger;
 
-/*
- * @author cartaginesi, battistoni, marchesini
- */
 public class Scrittore implements Runnable {
 
     String nomeFile;

@@ -1,11 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- */
 package com.mycompany.gran_prix;
 
-/**
- * @author cartaginesi, battistoni, marchesini
- */
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Giocatore {
@@ -53,7 +48,6 @@ public class Giocatore {
         setPassword(password);
     }
 
-    // Metodo per criptare vigenere
     public String criptaVigenere() {
         StringBuilder passwordCifrata = new StringBuilder();
 
@@ -70,14 +64,13 @@ public class Giocatore {
         return this.passwordCifrata;
     }
 
-    // Metodo per salvare le credenziali
     public void salvaCredenziali() {
         Scrittore scrittore = new Scrittore("credenziali.csv", nomeGiocatore, email, passwordCifrata);
         Thread threadScrittore = new Thread(scrittore);
         threadScrittore.start();
     }
 
-    public void gestioneCircuito() {
+    public void gestioneCircuito() throws IOException {
         System.out.println("Immetti il nome del circuito: ");
         String nomeCircuito = sc.nextLine();
         System.out.println("Immetti il numero dei giri: ");
@@ -88,7 +81,6 @@ public class Giocatore {
         circuito.inserisciDatiPiloti();
     }
 
-    // Getters e setters
     public String getNomeGiocatore() {
         return nomeGiocatore;
     }
