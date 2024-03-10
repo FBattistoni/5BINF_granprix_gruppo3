@@ -27,17 +27,25 @@ public class Scrittore implements Runnable {
     }
 
     public void scrivi() {
-
+        // Crea un oggetto BufferedWriter per scrivere nel file
         try (BufferedWriter br = new BufferedWriter(new FileWriter(nomeFile))) {
+            // Scrive il nome del giocatore nel file, racchiuso tra '<' e '>'.
             br.write("<" + nomeGiocatore + ">");
+            // Aggiunge un carattere di nuova riga al file.
             br.write("\n\r");
+            // Scrive l'email del giocatore nel file, racchiuso tra '<' e '>'.
             br.write("<" + email + ">");
+            // Aggiunge un carattere di nuova riga al file.
             br.write("\n\r");
+            // Scrive la password del giocatore nel file, racchiuso tra '<' e '>'.
             br.write("<" + password + ">");
+            // Aggiunge un carattere di nuova riga al file.
             br.write("\n\r");
+            // Forza la scrittura di tutti i dati nel buffer sul file.
             br.flush();
 
         } catch (IOException ex) {
+            // In caso di errore di input/output (IOException), registra l'errore usando un Logger.
             Logger.getLogger(Scrittore.class.getName()).log(Level.SEVERE, null, ex);
         }
 
