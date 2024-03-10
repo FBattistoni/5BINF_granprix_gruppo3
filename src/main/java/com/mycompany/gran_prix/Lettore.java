@@ -3,10 +3,6 @@ package com.mycompany.gran_prix;
 import java.io.IOException;
 import java.io.FileReader;
 
-/**
- *
- * @author cartaginesi, battistoni, marchesini
- */
 public class Lettore extends Thread {
 
     // Nome del file da leggere
