@@ -5,7 +5,10 @@ import java.util.Scanner;
 
 public class Giocatore {
 
+    // Scanner per l'input da tastiera
     private final Scanner sc = new Scanner(System.in);
+
+    // Attributi del giocatore
     private String nomeGiocatore;
     private String email;
     private String password;
@@ -14,6 +17,7 @@ public class Giocatore {
     private String modelloAuto;
     private String nomePilota;
 
+    // Costruttore (inizializza gli attributi con valori vuoti)
     public Giocatore() {
         this.nomeGiocatore = "";
         this.email = "";
@@ -21,33 +25,41 @@ public class Giocatore {
         this.chiave = "";
     }
 
+    // Metodo per la registrazione di un nuovo giocatore
     public void registrazione() {
         System.out.println("Immetti il tuo nome: ");
         nomeGiocatore = sc.nextLine();
         setNomeGiocatore(nomeGiocatore);
+        
         System.out.println("Immetti la tua email: ");
         email = sc.nextLine();
         setEmail(email);
+        
         System.out.println("Immetti la tua password: ");
         password = sc.nextLine();
         setPassword(password);
+        
         System.out.println("Immetti la chiave: ");
         chiave = sc.nextLine();
         setChiave(chiave);
     }
 
+    // Metodo per l'accesso di un giocatore
     public void accesso() {
         System.out.println("Immetti il tuo nome: ");
         nomeGiocatore = sc.nextLine();
         setNomeGiocatore(nomeGiocatore);
+        
         System.out.println("Immetti la tua email: ");
         email = sc.nextLine();
         setEmail(email);
+        
         System.out.println("Immetti la tua password: ");
         password = sc.nextLine();
         setPassword(password);
     }
 
+    // Metodo per cifrare la password con il cifrario di Vigenère
     public String criptaVigenere() {
         StringBuilder passwordCifrata = new StringBuilder();
 
@@ -64,23 +76,30 @@ public class Giocatore {
         return this.passwordCifrata;
     }
 
+    // Metodo per salvare le credenziali del giocatore su file
     public void salvaCredenziali() {
         Scrittore scrittore = new Scrittore("credenziali.csv", nomeGiocatore, email, passwordCifrata);
         Thread threadScrittore = new Thread(scrittore);
         threadScrittore.start();
     }
 
+    // Metodo per definire le caratteristiche di un circuito
     public void gestioneCircuito() throws IOException {
         System.out.println("Immetti il nome del circuito: ");
         String nomeCircuito = sc.nextLine();
+        
         System.out.println("Immetti il numero dei giri: ");
         int numeroGiri = sc.nextInt();
+        
         System.out.println("Immetti la lunghezza del circuito: ");
         int lunghezzaCircuito = sc.nextInt();
+        
         Circuito circuito = new Circuito(nomeCircuito, numeroGiri, lunghezzaCircuito);
         circuito.inserisciDatiPiloti();
     }
 
+    // Metodi getter e setter per gli attributi della classe
+    
     public String getNomeGiocatore() {
         return nomeGiocatore;
     }
