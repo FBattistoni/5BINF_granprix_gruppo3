@@ -13,8 +13,11 @@ public class Auto {
         this.tipo = tipo;
     }
 
+    // salvataggio auto in file
     public void salvaAuto() {
+        // utilizzo l'oggetto ScrittoreAuto per scrivere il file
         ScrittoreAuto scrittoreAuto = new ScrittoreAuto("auto.csv", modelloAuto);
+        // attivo un thread separato per permettere l'esecuzione non bloccante della scrittura sul file
         Thread threadScrittoreAuto = new Thread(scrittoreAuto);
         threadScrittoreAuto.start();
     }
