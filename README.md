@@ -1,4 +1,3 @@
-
 ### Struttura del codice
 
 Il codice è organizzato in pacchetti e classi:
