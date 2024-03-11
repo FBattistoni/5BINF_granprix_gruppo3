@@ -42,9 +42,9 @@ Il simulatore offre diverse funzionalità, tra cui:
 
 ## Strumenti Utilizzati
 
-- **ChatGPT**: Utilizzato per generare istruzioni e dialoghi nel simulatore.
-- **Presentazioni su Moodle**: Utilizzato per fornire materiali di apprendimento e istruzioni aggiuntive ai giocatori.
-- **Oracle**: Utilizzato per la gestione dei dati dei piloti, delle auto e dei giocatori.
-- **Libro di Testo**: Utilizzato per raccogliere informazioni e regole relative ai Grand Prix e alle gare automobilistiche.
+- **ChatGPT**: Utilizzato per generare informazioni o spegiazie, e per la risoluzione degli errori.
+- **Presentazioni su Moodle**: Utilizzato lo studio dei materiali per il raggiungimento dell'obiettivo.
+- **Oracle**: Sito per ricercare e approfondire il linguaggio Java.
+- **Libro di Testo**: Utilizzato per raccogliere informazioni generali ed esempi.
 - **Netbeans**: Utilizzato per lo sviluppo del software del simulatore.
 - **Github**: Utilizzato per il versionamento del codice e la collaborazione nello sviluppo del progetto.
